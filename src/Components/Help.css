@@ -1,0 +1,39 @@
+.sidebar {
+    height: 600vh; /* Full-height: remove this if you want "auto" height */
+    width: 25%; /* Set the width of the sidebar */
+    position: sticky; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;/* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /*Disable horizontal scroll */
+    padding-top: 20px;
+    text-align: left;
+    font-family: "Moderat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.5652;
+    padding-left: 27px;
+    float: left;
+  }
+.sidebar h3:hover{
+    color: #3b73e2
+}
+.main{
+    width: 75%;
+}
+.main h1{
+    font-size: 51px;
+    line-height: 51px;
+    margin: 0px 0px 44px;
+    font-family: "Fortescue Semibold","Larish Neue Semibold",Palatino,"Times New Roman",Times,serif;
+}
+.main h2{
+    font-size: 27px;
+    text-align: left;
+    font-weight: 800;
+    line-height: 34px;
+}
+.main p{
+    font-size: 19px;
+    line-height: 30px;
+    text-align: left;
+}

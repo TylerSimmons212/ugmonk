@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'Qanelas Soft';
+    src: url('../../fonts/QanelasSoftDEMO-Medium.otf')
+}
+.ugmonk :hover{
+    color: #3b73e2
+}
+
+h1 {
+    font-family: 'Qanelas Soft',Cambria,"Times New Roman",Times,serif;
+    font-size: 1.25 em;
+    font-stretch: normal;
+    color: #262626;
+    letter-spacing: 7px;
+    font-size: 40px;
+}
+h2 {
+    font-family: "Fortescue Semiold", "Larish Neue Semibbold", Palatino, "Times New Roman", Times, serif;
+    font-size: 69px;
+    font-weight: 525;
+    line-height: 69px;
+    color: rgb(38, 38, 38)
+}
+button{
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+.main-nav {
+    display: flex;
+    justify-content: space-evenly;   
+}
+.main-nav button{
+    margin-top: 45px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 26.6px;
+}
+.top-nav{
+    display: flex;
+    justify-content: flex-end;
+    color: #888;
+    margin-top: 15px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.top-nav button {
+    font-family: Moderat, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    color: #888;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.cart-logo {
+    color: black;
+    font-size: 13px;
+    padding-left: 15px;
+    padding-top: 2px;
+}
+.cart-l {
+    color: black;
+}
+.bars {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content Link {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content Link:hover {background-color: #ddd;}
+  .dropdown:hover .dropdown-content {display: block;}
+@media(min-width: 768px){
+    .bars{display: none}
+    .cart-l{display: none}
+}
+@media(max-width: 767px){
+    .bar{display: none}
+    .top-nav{display: none}
+}

@@ -1,0 +1,12 @@
+.title {
+    font-family: "Fortescue Semibold", "Larish Neue Semibold", Palatino, "Times New Roman", Times, serif;
+    font-size: 69px;
+    line-height: 69px;
+    margin: 0px 0px 55px;
+    text-align: center;
+}
+.about {
+    background-color: #f2f2f2;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}

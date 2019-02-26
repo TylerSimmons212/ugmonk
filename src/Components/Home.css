@@ -1,0 +1,65 @@
+img {
+    height: auto;
+    max-width: 100%;
+    margin-left:auto;
+    margin-right: auto;
+    display: block;
+    border: 0;
+}
+/* .category {
+    display: grid;
+} */
+.bg-green-light {
+    height: 482px;
+    align-items: center;
+    background-color: hsl(145, 61%, 94%);
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0px 0px 27px;
+    padding: 36px, 540.328px, 36px, 0px;
+    text-align: center;
+}
+.words {
+    float: left;
+    width: 50%;
+    height: 457px;
+    align-items: center;
+    background-color: hsl(145, 61%, 94%);
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 30px;
+    margin: 0px 0px 27px;
+    padding: 36px, 540.328px, 36px, 0px;
+    text-align: center;
+    flex-direction: column;
+}
+.title {
+    font-size: 55px;
+    text-align: center;
+}
+.description {
+    font-size: 20px;
+    text-align: center;
+}
+.btn {
+    width: 271px;
+    height: 63px;
+    background-color: hsl(0, 0%, 26%);
+    color: hsl(0, 0%, 100%);
+    font-size: 23px;
+    line-height: 36px;
+    text-align: center;
+}
+.category__background {
+    height:457px;
+    width: 540px;
+    background-position: 50% 50%;
+    background-size: cover;
+    color: hsl(220, 74%, 56%);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    background-image: url('https://ugmonk.com/wp-content/uploads/2016/03/category-clothing-1.jpg');    
+}

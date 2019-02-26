@@ -1,0 +1,74 @@
+.outer{
+    background-image: url('https://ugmonk.com/wp-content/themes/ugmonk2016/img/bg-newsletter.jpg');
+    width:100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+}
+.inner{
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    background-color: #cef3dd;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right:2rem;
+    text-align: center;
+    color: #424242;
+    
+}
+.inner h1{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.inner input{
+    margin-top:5px;
+    margin-bottom:20px;
+    width: 40%;
+    height: 10%;
+    box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	padding: 7px;
+	border: none;
+	background: rgba(0, 0, 0, 0.2);
+	margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+	height: 45px;
+}
+.inner input::placeholder{
+    color: #F0F6F6;
+}
+.inner button{
+    margin-top:5px;
+    width: 30%;
+    
+}
+@media (max-width: 865px){
+    .inner h1{
+        width: 100%;
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .inner h3{
+        width: 100%;
+        font-size: 15px;
+    }
+    .inner input{
+        width: 60%
+    }
+    .inner button{
+        width: 40%;
+        font-size: 18px;
+        margin-bottom: 5px;
+        margin-top:-5px;
+    }
+}
+ @media (max-width: 570px){
+     .inner h3{font-size: 0}
+     .inner h1{font-size: 40px; line-height: 45px;}
+ }

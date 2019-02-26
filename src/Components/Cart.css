@@ -1,0 +1,20 @@
+.cart button{
+    margin-bottom:20px;
+}
+.inc {
+    width: 15px;
+}
+#amount button{
+    margin: 5px;
+    width: 30px;
+    background-color: white;
+    color: #424242;
+    height: 25px;
+    font-size: 14px;
+    transition: 0.1s color linear;
+}
+#amount button:hover {
+    background-color: #424242;
+    color: white;
+    border: solid 1px white;
+}
