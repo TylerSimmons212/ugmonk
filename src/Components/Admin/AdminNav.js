@@ -20,7 +20,7 @@ function AdminNav (props){
     }
     return (
     <div>
-        <nav>
+        <nav className='all-nav'>
             <div className='top-nav'>
                 {name && name}
                 |
