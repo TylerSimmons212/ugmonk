@@ -43,3 +43,9 @@
     width: 30%;
     margin: 0px;
 }
+@media(max-width: 785px){
+    #products{width: 45%}
+}
+@media(max-width: 525px){
+    #products{width: 80%}
+}

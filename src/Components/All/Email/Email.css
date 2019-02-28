@@ -72,3 +72,16 @@
      .inner h3{font-size: 0}
      .inner h1{font-size: 40px; line-height: 45px;}
  }
+ @media (max-width: 354px){
+     .inner h1{font-size: 38px; font-weight: 900;}
+     .inner input{width: 90%}
+     .inner button{width: 50%; height: 50px; margin-top: 10px;}
+ }
+ @media (max-width:342px){
+    .inner h1{font-size: 30px; font-weight: 900;}
+    .inner input{width: 90%}
+    .inner button{width: 50%; height: 40px; margin-top: 6px;}
+}
+@media (max-width:320px){
+    .inner h1{font-size: 25px; line-height: 33px}
+}
