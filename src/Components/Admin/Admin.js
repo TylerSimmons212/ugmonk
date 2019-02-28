@@ -1,9 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import '../All/Navbar.css'
-import {connect} from 'react-redux';
-import {updateUser} from '../../ducks/reducer';
-import {withRouter} from 'react-router-dom';
 import './Admin.css'
 import AdminNav from './AdminNav';
 export default function Admin (){

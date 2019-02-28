@@ -27,7 +27,7 @@ function AdminNav (props){
                 {name?(<button className='ugmonk' onClick={logout}>Logout</button>):(<Link to='/login'><button className='ugmonk'>Login</button></Link>)}
             </div>
             <div className='dropdown'>
-                <h1 className='bars'><i class="fas fa-bars"></i></h1>
+                <h1 className='bars'><i className="fas fa-bars"></i></h1>
                 <div className='dropdown-content text-color'>
                     <Link to='/admin' style={{textDecoration:'none'}} id='title'><h1>UGMONK</h1></Link>
                     <Link to='/inventory' className='bar bars-mini'><button>Inventory</button></Link>

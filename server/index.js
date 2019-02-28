@@ -3,12 +3,29 @@ const express = require("express");
 const massive = require("massive");
 const sessions = require("express-session")
 const ctrl = require('./controller')
+const stripe = require("stripe")("sk_test_Bd3yFBhqJGc1VKF0aM4gGY3U");
 
 const { SERVER_PORT, DB_CONNECTION, SESSION_SECRET } = process.env;
 
 const app = express();
 
 app.use(express.json());
+app.use(require("body-parser").text());
+
+app.post("/charge", async (req, res) => {
+  try {
+    let {status} = await stripe.charges.create({
+      amount: 2000,
+      currency: "usd",
+      description: "An example charge",
+      source: req.body
+    });
+
+    res.json({status});
+  } catch (err) {
+    res.status(500).end();
+  }
+});
 
 app.use(sessions({
   secret: SESSION_SECRET,
@@ -25,10 +42,12 @@ massive(DB_CONNECTION).then(db => {
   );
 });
 
+app.put('/api/products/:id', ctrl.updateInventory);
 app.get('/api/products/', ctrl.getProducts)
 app.get('/api/inventory', ctrl.getInventory)
 app.post('/auth/register', ctrl.register);
 app.post('/auth/login', ctrl.login);
 app.post('/auth/logout', ctrl.logout);
-
+app.post('/api/submit', ctrl.submit);
 app.get('/api/user', ctrl.getUser);
+app.delete(`/api/delete/:id`, ctrl.delete);

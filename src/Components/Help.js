@@ -5,7 +5,7 @@ import Footer from './All/Footer/Footer'
 import './Help.css'
  export default function(){
      return(
-         <div>
+         <div style={{height: '10000vh'}}>
         <Navbar/>
         <div className='sidebar'>
             <h3>About Ugmonk</h3>

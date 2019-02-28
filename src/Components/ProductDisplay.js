@@ -23,7 +23,7 @@ class ProductDisplay  extends Component {
     render(){
         let products = this.state.items.map(val=>{
             return(
-                <div className='products'>
+                <div id='products'>
                     <img src={val.image_url} alt='product'/>
                     <h1>{val.product_name}</h1>
                     <h3>${val.price}</h3>
@@ -34,7 +34,7 @@ class ProductDisplay  extends Component {
         console.log(this.state.items);
         
         return(
-            <div className='allProducts'>
+            <div id='allProducts'>
             {products}
             </div>
         )

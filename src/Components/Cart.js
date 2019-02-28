@@ -6,12 +6,14 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {updateAmount} from '../ducks/reducer'
 import './Cart.css'
+import CheckoutModule from './CheckoutModule';
 
 class Cart extends Component{
 constructor(){
     super()
     this.state={
-        cart:[]
+        cart:[],
+        module: false,
     };
 }
 
@@ -19,20 +21,29 @@ handleAmountChange(amountChange, item){
     this.props.updateAmount(item.product_id, item.amount + amountChange)
 }
 
+
+toggleStripe = () => {
+    return(
+        this.setState({
+            module: true
+        })
+    )
+}
 render(){
     let products = this.props.cart.map(val=>{
         return(
-            <div className='products'>
+            <div className='productsInCart'>
                 <img src={val.image_url} alt='product'/>
                 <h1>{val.product_name}</h1>
                 <h3>${val.price}</h3>
                 <h3 id='amount'>
-                    <button className='inc' onClick={()=>{this.handleAmountChange(-1, val)}}>-</button>
+                    <button id='inc' onClick={()=>{this.handleAmountChange(-1, val)}}>-</button>
                     {val.amount}
-                    <button className='inc' onClick={()=>{this.handleAmountChange(1, val)}}>+</button>
+                    <button id='inc' onClick={()=>{this.handleAmountChange(1, val)}}>+</button>
                 </h3>
                 
-                <button>CheckOut</button>
+                <button className='amount' onClick={this.toggleStripe}>CheckOut</button>
+                {this.state.module?<CheckoutModule/>:<span></span>}
             </div>
         )
     })

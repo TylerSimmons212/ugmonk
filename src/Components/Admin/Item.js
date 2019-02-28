@@ -1,17 +1,11 @@
 import React, { Component } from 'react'
-import Axios from 'axios';
+import axios from 'axios';
 
 class Item extends Component {
     constructor() {
         super()
         this.state = {
             edit: false,
-            product_name: '',
-            price: '',
-            category: '',
-            type: '',
-            amount: 0,
-            image_url: ''
         }
     }
 
@@ -28,9 +22,20 @@ class Item extends Component {
     }
 
     handleSubmit = () => {
-        Axios.put('/api/products', this.state).then(response => {
-            
-        })
+        axios.put(`/api/products/${this.props.item.product_id}`, this.state).then(response => {
+            this.setState({
+                edit: false,
+            })
+            this.props.getItems()
+        }).catch(err => console.log(err))
+    }
+    handleDelete = () => {
+        console.log('clicked');
+        
+        axios.delete( `/api/delete/${this.props.item.product_id}` ).then( response => {
+          this.setState({ edit: false });
+          this.props.getItems()
+        }).catch(err => console.log(err))
     }
 
     render() {
@@ -44,7 +49,7 @@ class Item extends Component {
                         <h3><span className='strong'>Category</span>: {this.props.item.category}</h3>
                         <h3><span className='strong'>Type</span>: {this.props.item.type}</h3>
                         <h3><span className='strong'>Amount</span>: {this.props.item.amount}</h3>
-                        <span className='icon'><i class="far fa-edit" onClick={()=>{this.toggleEdit()}}></i></span>
+                        <span className='icon done'><i className="far fa-edit" onClick={()=>{this.toggleEdit()}}></i></span>
 
                     </div>
                 </div>
@@ -57,8 +62,8 @@ class Item extends Component {
                         <h3><span className='strong'>Category</span>: <input name='category' onChange={this.handleChange} placeholder={this.props.item.category}></input></h3>
                         <h3><span className='strong'>Type</span>: <input name='type' onChange={this.handleChange} placeholder={this.props.item.type}></input></h3>
                         <h3><span className='strong'>Amount</span>: <input name='amount' onChange={this.handleChange} placeholder={this.props.item.amount}></input></h3>
-                        <div className='icon done'><i class="far fa-check-circle"></i></div>                        
-                        <div className='icon done'><i class="fas fa-trash-alt"></i></div>
+                        <div className='icon done'><i className="far fa-check-circle" onClick={this.handleSubmit}></i></div>                        
+                        <div className='icon done'><i className="fas fa-trash-alt" onClick={this.handleDelete}></i></div>
                     </div>
                 </div>
         )
