@@ -9,16 +9,10 @@ class ProductDisplay  extends Component {
         this.state = {items:[]};
     }
     componentDidMount(){
-        console.log(this.props)
         const {cat,type} = this.props
-        console.log (cat, type)
         axios.get(`/api/products/?cat=${cat}&type=${type}`)
-        .then(res => {
-            console.log(res.data);
-            
-            this.setState({items:res.data})})
+        .then(res => {this.setState({items:res.data})})
         .catch(err => {console.log(err)})
-        console.log(this.state.items);
     }
     render(){
         let products = this.state.items.map(val=>{
@@ -31,7 +25,6 @@ class ProductDisplay  extends Component {
                 </div>
             )
         })
-        console.log(this.state.items);
         
         return(
             <div id='allProducts'>

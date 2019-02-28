@@ -19,7 +19,7 @@ function Navbar (props){
     }
     return (
     <div>
-        <nav>
+        <nav className='navbar'>
             <div className='top-nav'>
                 {name && name}
                 <Link to='/FAQ' className='ugmonk'><button>Help</button></Link>
@@ -29,9 +29,8 @@ function Navbar (props){
                 {name?<Link to='/cart'><div className='cart-logo ugmonk'><i className="fas fa-shopping-cart"></i></div></Link>:<Link to='/login'><div className='cart-logo ugmonk'><i className="fas fa-shopping-cart"></i></div></Link>}
             </div>
             <div className='dropdown'>
-                <h1><i class="fas fa-bars"></i></h1>
+                <h1 className='bars'><i class="fas fa-bars"></i></h1>
                 <div className='dropdown-content'>
-    `               <Link to='/' style={{textDecoration:'none'}} className='ugmonk'><h1>UGMONK</h1></Link>
                     <Link to='/shop' className='bar bars-mini'><button>Shop</button></Link>
                     <Link to='/blog' className='bar bars-mini'><button>Journal</button></Link>
                     <Link to='/about' className='bar bars-mini'><button>About</button></Link>`
