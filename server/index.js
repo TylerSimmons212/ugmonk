@@ -1,3 +1,4 @@
+const path = require('path'); // Usually moved to the start of file
 require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
@@ -9,8 +10,11 @@ const { SERVER_PORT, DB_CONNECTION, SESSION_SECRET } = process.env;
 
 const app = express();
 
+
 app.use(express.json());
 app.use(require("body-parser").text());
+
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.post("/charge", async (req, res) => {
   try {
@@ -20,7 +24,7 @@ app.post("/charge", async (req, res) => {
       description: "An example charge",
       source: req.body
     });
-
+    
     res.json({status});
   } catch (err) {
     res.status(500).end();
@@ -38,7 +42,7 @@ app.use(sessions({
 massive(DB_CONNECTION).then(db => {
   app.set('db', db);
   app.listen(SERVER_PORT, () =>
-    console.log(`Houston we have lift off on port ${SERVER_PORT}`)
+  console.log(`Houston we have lift off on port ${SERVER_PORT}`)
   );
 });
 
@@ -51,3 +55,8 @@ app.post('/auth/logout', ctrl.logout);
 app.post('/api/submit', ctrl.submit);
 app.get('/api/user', ctrl.getUser);
 app.delete(`/api/delete/:id`, ctrl.delete);
+
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
