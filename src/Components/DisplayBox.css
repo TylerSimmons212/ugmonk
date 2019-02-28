@@ -1,0 +1,106 @@
+.display-box{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.outer1{
+    display: flex;
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.outer2{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.first{
+    background-color: #e6f9ee;
+}
+.second{
+    background-color: #fff9de;
+}
+.third{
+    background-color: #e9fbfe;
+    padding: 0px 85px;
+}
+.fourth{
+    background-color: #d2f7ec;
+    padding: 0 56px;
+}
+.inner-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.inner-text h1{
+    font-family: "Fortescue Semibold", "Larish Neue Semibold", Palatino, "Times New Roman", Times, serif;
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 68px;
+    margin-top: -10px;
+}
+.inner-text p{
+    font-family: Moderat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+}
+.inner-text button{
+    margin-top: 20px;
+    width: 271px;
+    height: 63px;
+    background-color: hsl(0, 0%, 26%);
+    color: hsl(0, 0%, 100%);
+    font-size: 23px;
+    line-height: 36px;
+    text-align: center;
+}
+.inner-text button:hover {
+    background-color: white;
+    color: #424242;
+    border: solid 1px #424242;
+}
+.arrow{
+    font-weight: 100;
+}
+@media(max-width:775px){
+    .outer1{
+        flex-direction: column-reverse;
+    }
+    .outer2{
+        flex-direction: column-reverse;
+    }
+    .inner-text{
+        padding: 30px 20px;
+    }
+    .inner-text h1{
+        margin-bottom: 0;
+    }
+}
+@media(max-width:415px){
+    .inner-text{
+        padding: 30px 20px;
+    }
+    .inner-text h1{
+       font-size: 40px;
+       font-weight: 600;
+    }
+    .inner-text p{
+        font-size: 18px;
+    }
+    .inner-text button{
+        font-size: 19px;
+        width: 250px;
+        height: 55px;
+    }
+}
+@media(min-width:1000px){
+    .display-box img{
+        width: 60%;
+    }
+}

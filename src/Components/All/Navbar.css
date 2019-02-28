@@ -97,5 +97,5 @@ button{
 @media(max-width: 767px){
     .bar{display: none}
     .top-nav{display: none}
-    .dropdown{display: flex; flex-direction:row}
+    /* .dropdown{display: flex; flex-direction:row} */
 }

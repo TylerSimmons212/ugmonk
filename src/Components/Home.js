@@ -18,11 +18,11 @@ class Home  extends Component {
     }
     render() {
         // console.log(data);
-        let displayBox = data.map((val, i)=>{
-            return(
-                <DisplayBox key={i} title={val.title} description={val.description} image={val.image} color={val.color}/>
-            )
-        })
+        // let displayBox = data.map((val, i)=>{
+        //     return(
+        //         <DisplayBox key={i} title={val.title} description={val.description} image={val.image} color={val.color}/>
+        //     )
+        // })
         return(
             <div>
                 <Navbar/>
@@ -35,7 +35,8 @@ class Home  extends Component {
                     </Link>
 
 
-                {displayBox}
+                {/* {displayBox} */}
+                <DisplayBox/>
 
                 
                 <div className='workspace'></div>
