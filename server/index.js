@@ -19,7 +19,7 @@ app.use( express.static( `${__dirname}/../build` ) );
 app.post("/charge", async (req, res) => {
   try {
     let {status} = await stripe.charges.create({
-      amount: 2000,
+      amount: 3000,
       currency: "usd",
       description: "An example charge",
       source: req.body

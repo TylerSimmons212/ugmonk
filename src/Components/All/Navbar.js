@@ -5,7 +5,9 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import {updateUser} from '../../ducks/reducer';
 import {withRouter} from 'react-router-dom';
-function Navbar (props){
+import Dropdown from './Dropdown';
+
+const Navbar = (props) => {
     const {name} = props
     const logout = () => {
         axios.post('/auth/logout')
@@ -13,9 +15,7 @@ function Navbar (props){
             props.updateUser({name:'', user_id:0})
             props.history.push('/')
         })
-        .catch(err => {
-            console.log(err);
-        })
+        .catch(err => {console.log(err)})
     }
     return (
     <div>
@@ -29,12 +29,7 @@ function Navbar (props){
                 {name?<Link to='/cart'><div className='cart-logo ugmonk'><i className="fas fa-shopping-cart"></i></div></Link>:<Link to='/login'><div className='cart-logo ugmonk'><i className="fas fa-shopping-cart"></i></div></Link>}
             </div>
             <div className='dropdown'>
-                <h1 className='bars'><i class="fas fa-bars"></i></h1>
-                <div className='dropdown-content'>
-                    <Link to='/shop' className='bar bars-mini'><button>Shop</button></Link>
-                    <Link to='/blog' className='bar bars-mini'><button>Journal</button></Link>
-                    <Link to='/about' className='bar bars-mini'><button>About</button></Link>`
-                </div>
+                <Dropdown/>
             </div>
             <div className='main-nav'>
                 <Link to='/' style={{textDecoration:'none'}} className='ugmonk'><h1>UGMONK</h1></Link>
@@ -47,12 +42,8 @@ function Navbar (props){
 )}
 const mapToProps = reduxState => {
     const {name} = reduxState;
-    return {
-        name
-    };
+    return {name: name};
 };
-const dispatch = {
-    updateUser
-};
+const dispatch = {updateUser};
 const NavbarWithRouter = withRouter(Navbar)
 export default connect(mapToProps, dispatch)(NavbarWithRouter)

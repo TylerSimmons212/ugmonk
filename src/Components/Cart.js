@@ -25,7 +25,7 @@ handleAmountChange(amountChange, item){
 toggleStripe = () => {
     return(
         this.setState({
-            module: true
+            module: !this.state.module
         })
     )
 }
@@ -43,7 +43,9 @@ render(){
                 </h3>
                 
                 <button className='amount' onClick={this.toggleStripe}>CheckOut</button>
-                {this.state.module?<CheckoutModule/>:<span></span>}
+                <div>
+                {this.state.module?<CheckoutModule toggle={this.toggleStripe}/>:<span></span>}
+                </div>
             </div>
         )
     })

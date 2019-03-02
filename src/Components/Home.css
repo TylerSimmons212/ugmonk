@@ -63,3 +63,8 @@ img {
     text-align: center;
     background-image: url('https://ugmonk.com/wp-content/uploads/2016/03/category-clothing-1.jpg');    
 }
+.carousel-view{
+    width:90%;
+    margin-left:5%;
+    margin-bottom: 2%;
+}

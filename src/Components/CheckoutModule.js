@@ -17,16 +17,17 @@ import {StripeProvider, Elements} from 'react-stripe-elements';
 //   injectStripe,
 // } from 'react-stripe-elements';
 
-const CheckoutModule = () => {
+const CheckoutModule = (props) => {
     return(
         <div className='all-window'>
             <div className='pop-up'>
                 <StripeProvider apiKey="pk_test_0f3rTmUKB6IRavcAXMcwEQSR">
                     <div className="example">
-                    <h1>React Stripe Elements Example</h1>
+                    <h1>CheckOut</h1>
                     <Elements>
-                        <CheckoutForm style={{display:'flex', flexDirection:'coloumn'}}/>
+                        <CheckoutForm/>
                     </Elements>
+                    <button onClick={props.toggle}>Return</button>
                     </div>
                 </StripeProvider>
             </div>

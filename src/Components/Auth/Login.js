@@ -61,14 +61,12 @@ class Login extends Component {
         const { username, password } = this.state;
         return (
             <div className='Login'>
-
                 <input type='username' value={username} onChange={e => this.handleChange('username', e.target.value)} placeholder='Username' />
-
                 <input type='password' value={password} onChange={e => this.handleChange('password', e.target.value)} placeholder='Password' />
-
-                <button onClick={this.login}>Login</button>
-                <button onClick={this.register}>Register</button>
-
+                <div className='login-buttons'>
+                    <button onClick={this.login}>Login</button>
+                    <button onClick={this.register}>Register</button>
+                </div>
             </div>
         )
     }

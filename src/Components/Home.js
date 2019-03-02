@@ -6,6 +6,7 @@ import Footer from './All/Footer/Footer'
 import './Home.css'
 import Navbar from './All/Navbar';
 import Email from './All/Email/Email';
+import CarouselDemo from './Carousel';
 class Home  extends Component {
     
     constructor(props) {
@@ -26,22 +27,10 @@ class Home  extends Component {
         return(
             <div>
                 <Navbar/>
-                    <Link to='/shop/clothing-hats'>
-                        <picture>
-                            <source srcSet="https://ugmonk.com/wp-content/uploads/2018/12/beanie-large2.jpg" media="(min-width: 769px)"></source>
-                            <source srcSet="https://ugmonk.com/wp-content/uploads/2018/12/beanie-med.jpg" media="(min-width: 481px)"></source>
-                            <img srcSet="https://ugmonk.com/wp-content/uploads/2018/12/beanie-sml.jpg" alt="New Chunky Knit Ugmonk Beanies"></img>
-                        </picture>
-                    </Link>
-
-
-                {/* {displayBox} */}
+                <div className='carousel-view'>
+                    <CarouselDemo/>
+                </div>
                 <DisplayBox/>
-
-                
-                <div className='workspace'></div>
-                <div className='everyday'></div>
-                <div className='prints'></div>
                 <Email/>
                 <Footer/>
             </div>
