@@ -34,7 +34,7 @@ class Dropdown extends Component{
                         {name?<Link to='/cart'><div className='cart-logo-res'><i className="fas fa-shopping-cart"></i></div></Link>:<Link to='/login'><div className='cart-logo ugmonk'><i className="fas fa-shopping-cart"></i></div></Link>}
                     </div>
                 <div  className='dropdown-content-main-nav'>
-                    <button onClick={this.toggleMini}>Shop</button>
+                    <Link to='./shop/clothing-all'><button onClick={this.toggleMini}>Shop</button></Link>
                     <Link to='/blog'><button>Journal</button></Link>
                     <Link to='/about'><button>About</button></Link>
                 </div>

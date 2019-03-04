@@ -3,6 +3,7 @@
     src: url('../../fonts/QanelasSoftDEMO-Medium.otf')
 }
 .ugmonk :hover{
+    transition: 0.2s;
     color: #3b73e2
 }
 
@@ -26,6 +27,12 @@ button{
     border: none;
     cursor: pointer;
     text-align: center;
+}
+.main-nav button:hover{
+    color: #3b73e2;
+}
+.top-nav button:hover{
+    color: #3b73e2;
 }
 .main-nav {
     display: flex;
